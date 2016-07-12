@@ -1,0 +1,32 @@
+<?
+$MESS["AUTH_LOGIN_BUTTON"] = "Anmelden";
+$MESS["AUTH_CLOSE_WINDOW"] = "Schließen";
+$MESS["AUTH_LOGIN"] = "Login";
+$MESS["AUTH_PASSWORD"] = "Passwort";
+$MESS["AUTH_REMEMBER_ME"] = "Passwort merken";
+$MESS["AUTH_FORGOT_PASSWORD_2"] = "Passwort vergessen?";
+$MESS["AUTH_REGISTER"] = "Anmelden";
+$MESS["AUTH_LOGOUT"] = "Log out";
+$MESS["AUTH_MP"] = "Mein Portal";
+$MESS["AUTH_WELCOME_TEXT"] = "Hallo";
+$MESS["AUTH_CAPTCHA_PROMT"] = "Geben Sie den Text vom Bild ein";
+$MESS["AUTH_BZP"] = "Workflow";
+$MESS["AUTH_NEW_MESSAGES"] = "Nachrichten";
+$MESS["AUTH_NEW_MESSAGES_DESCR"] = "Nachrichten anzeigen";
+$MESS["AUTH_PERSONAL_PAGE"] = "Meine Seite";
+$MESS["AUTH_PERSONAL_PAGE_DESCR"] = "Links zu den Profilverwaltungstools";
+$MESS["AUTH_PROFILE"] = "Mein Profil";
+$MESS["AUTH_PROFILE_DESCR"] = "Das Profil bearbeiten";
+$MESS["AUTH_TASKS"] = "Aufgaben";
+$MESS["AUTH_TASKS_DESCR"] = "Persönliche Aufgaben anzeigen";
+$MESS["AUTH_CALENDAR"] = "Kalender";
+$MESS["AUTH_CALENDAR_DESCR"] = "Den persönlichen Kalender anzeigen";
+$MESS["AUTH_PHOTO"] = "Fotos";
+$MESS["AUTH_BLOG"] = "Blog";
+$MESS["AUTH_FILES"] = "Dateien";
+$MESS["AUTH_GROUPS"] = "Gruppen";
+$MESS["AUTH_LOG"] = "Activity Stream";
+$MESS["AUTH_MICROBLOG"] = "Microblog";
+$MESS["AUTH_USER_MENU"] = "Nutzermenü";
+$MESS["AUTH_EXCHANGE"] = "Neue Nachrichten in Microsoft Exchange ";
+?>

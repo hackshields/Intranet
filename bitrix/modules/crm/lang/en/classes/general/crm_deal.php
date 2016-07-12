@@ -1,0 +1,29 @@
+<?
+$MESS["CRM_PERMISSION_DENIED"] = "Access denied";
+$MESS["CRM_ERROR_FIELD_IS_MISSING"] = "The field \"%FIELD_NAME%\" is required.";
+$MESS["CRM_ERROR_FIELD_INCORRECT"] = "The field \"%FIELD_NAME%\" is incorrect.";
+$MESS["CRM_FIELD_TITLE"] = "Title";
+$MESS["CRM_FIELD_OPPORTUNITY"] = "Income";
+$MESS["CRM_FIELD_EVENT_DATE"] = "Event Date";
+$MESS["CRM_FIELD_BEGINDATE"] = "Start Date";
+$MESS["CRM_FIELD_CLOSEDATE"] = "Projected Close Date";
+$MESS["CRM_FIELD_COMPARE_TITLE"] = "Changed the field \"Title\"";
+$MESS["CRM_FIELD_COMPARE_PRODUCT"] = "The \"Product\" field was modified.";
+$MESS["CRM_FIELD_COMPARE_COMPANY_ID"] = "Changed the field \"Company\"";
+$MESS["CRM_FIELD_COMPARE_CONTACT_ID"] = "Changed the field \"Contact\"";
+$MESS["CRM_FIELD_COMPARE_DEAL_STAGE"] = "Changed the field \"Stage\"";
+$MESS["CRM_FIELD_COMPARE_DEAL_STATE"] = "Changed the field \"Status\"";
+$MESS["CRM_FIELD_COMPARE_DEAL_TYPE"] = "Changed the field \"Type\"";
+$MESS["CRM_FIELD_COMPARE_COMMENTS"] = "Changed the field \"Comment\"";
+$MESS["CRM_FIELD_COMPARE_OPPORTUNITY"] = "Changed the field \"Income\"";
+$MESS["CRM_FIELD_COMPARE_PROBABILITY"] = "Changed the field \"Probability\"";
+$MESS["CRM_FIELD_COMPARE_BEGINDATE"] = "Changed the field \"Start Date\"";
+$MESS["CRM_FIELD_COMPARE_CLOSEDATE"] = "Changed the field \"Close Date\"";
+$MESS["CRM_FIELD_COMPARE_EVENT_DATE"] = "The \"Event Date\" field was modified.";
+$MESS["CRM_FIELD_COMPARE_EVENT_ID"] = "The \"Event Type\" field was modified.";
+$MESS["CRM_FIELD_COMPARE_EVENT_DESCRIPTION"] = "The \"Event Description\" field was modified.";
+$MESS["CRM_FIELD_COMPARE_ASSIGNED_BY_ID"] = "The \"Responsible Person\" field was modified.";
+$MESS["CRM_FIELD_COMPARE_EMPTY"] = "-empty-";
+$MESS["CRM_FIELD_COMPARE_CLOSED"] = "The field \"Closed\" was modified.";
+$MESS["CRM_DEAL_FIELD_OPPORTUNITY_INVALID"] = "The \"Profit\" field contains invalid characters.";
+?>

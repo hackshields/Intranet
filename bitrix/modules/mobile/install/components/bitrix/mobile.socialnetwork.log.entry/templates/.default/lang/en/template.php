@@ -1,0 +1,7 @@
+<?
+$MESS["MOBILE_LOG_DESTINATION_MORE"] = ", and #COUNT# more";
+$MESS["MOBILE_LOG_MORE"] = "More";
+$MESS["MOBILE_LOG_COMMENT_BUTTON_MORE"] = "View all comments (#COMMENTS#)";
+$MESS["MOBILE_LOG_COMMENT_ADD_TITLE"] = "Send message...";
+$MESS["MOBILE_LOG_COMMENT_ADD_BUTTON_SEND"] = "Send";
+?>

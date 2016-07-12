@@ -1,0 +1,35 @@
+<?
+$MESS["SONET_MANAGERS"] = "Vorgesetzte(r)";
+$MESS["SONET_SUBORDINATE"] = "Mitarbeiter";
+$MESS["SONET_GROUPS"] = "Gruppen";
+$MESS["SONET_ACTIVITY_STATUS"] = "Status";
+$MESS["SONET_ACTIONS"] = "Aktionen";
+$MESS["SONET_EDIT_PROFILE"] = "Profil bearbeiten";
+$MESS["SONET_DEACTIVATE"] = "Deaktivieren";
+$MESS["SONET_RESTORE"] = "Aktivieren";
+$MESS["SONET_REINVITE"] = "Erneut einladen";
+$MESS["SONET_DELETE"] = "Löschen";
+$MESS["SONET_USER_extranet"] = "Extranet";
+$MESS["SONET_USER_fired"] = "Deaktivieren";
+$MESS["SONET_USER_invited"] = "Eingeladen";
+$MESS["SONET_REINVITE_ACCESS"] = "Einladung wurde gesendet";
+$MESS["SONET_USER_admin"] = "Administrator";
+$MESS["SOCNET_CONFIRM_FIRE"] = "Der Mitarbeiter wird sich auf dem Portal nicht mehr anmelden können und wird auch in der Unternehmensstruktur nicht mehr angezeigt. Alle seine/ihre Daten (Dateien, Nachrichten, Aufgaben etc.) bleiben jedoch verfügbar.\\n\\nMöchten Sie den Zugriff diesem Mitarbeiter wirklich verweigern?";
+$MESS["SOCNET_CONFIRM_RECOVER"] = "Der Mitarbeiter wird sich auf dem Portal anmelden können und wird auch in der Unternehmensstruktur angezeigt.\\n\\nMöchten Sie den Zugriff diesem Mitarbeiter wirklich erlauben?";
+$MESS["SOCNET_CONFIRM_DELETE"] = "Die Einladung wird unwiderruflich gelöscht.\\n\\nMöchten Sie diesen Mitarbeiter wirklich löschen?";
+$MESS["SONET_USER_ABSENCE"] = "Abwesenheitseinträge";
+$MESS["SONET_SEND_MESSAGE"] = "Nachricht schreiben";
+$MESS["SONET_CONTACT_TITLE"] = "Kontaktinformationen";
+$MESS["SONET_CONTACT_EMPTY"] = "Kontaktinformationen nicht vorhanden";
+$MESS["SONET_COMMON_TITLE"] = "Allgemeine Daten";
+$MESS["SONET_COMMON_EMPTY"] = "Allgemeine Daten nicht vorhanden";
+$MESS["SONET_ADDITIONAL_TITLE"] = "Zusätzliche Informationen";
+$MESS["SONET_ADDITIONAL_EMPTY"] = "Zusätzliche Informationen nicht vorhanden";
+$MESS["SONET_C38_TP_NO_PERMS"] = "Sie haben nicht genügend Rechte, um das Profil dieses Nutzers anzusehen";
+$MESS["SONET_EXTRANET_TO_INTRANET"] = "Ins Intranet versetzen";
+$MESS["BX24_TITLE"] = "Vom Extranet ins Intranet versetzen";
+$MESS["BX24_BUTTON"] = "Versetzen";
+$MESS["BX24_CLOSE_BUTTON"] = "Schließen";
+$MESS["BX24_LOADING"] = "Wird geladen";
+$MESS["SONET_SONET_ADMIN_ON"] = "Administratormodus";
+?>

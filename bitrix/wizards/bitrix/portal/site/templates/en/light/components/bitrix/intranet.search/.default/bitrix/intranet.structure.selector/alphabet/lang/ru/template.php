@@ -1,0 +1,5 @@
+<?
+$MESS['ISS_TPL_ALPH'] = 'ÀÁÂÃÄÅ¨ÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞß';
+$MESS['ISS_TPL_APLH_ALL'] = 'À-ß';
+$MESS['ISS_TPL_APLH_CLEAR_FILTER'] = 'Âñå';
+?>

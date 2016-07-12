@@ -1,0 +1,1 @@
+<?$arTemplate = Array("NAME"=>"Green", "DESCRIPTION"=>"Green Theme");?>

@@ -1,0 +1,28 @@
+.page-wrapper {max-width:1400px!important; min-width:1060px!important;}
+
+.search-input { padding-top:4px !important; margin-top:-1px !important; }
+.sidebar-block-item { border-bottom:1px solid #eeeff0 !important; }
+.popular-posts .sidebar-block-item { border:none!important;}
+.header-search-input {display:block; padding:4px 0 0!important; text-indent:10px;}
+.header-search-icon {top:2px!important;}
+
+.pagetitle-content-topEnd-corn {display:none!important;}
+.pagetitle-content-topEnd {margin-right:-1px; border-right:1px solid #B7BEBF;}
+.footer-content-lowerEnd-corn {display:none!important;}
+
+.menu-item-index {line-height:14px!important;}
+
+.sidebar-widget-item {border-bottom:1px solid #efefef!important;  margin-bottom:0!important;}
+.widget-last-item {border-bottom:none!important;}
+.task-item-outbox, .task-item-under-control, .task-item-inbox {border-bottom:2px solid #efefef!important;}
+.task-item-under-control, .task-item-outbox, .task-item-inbox {margin-bottom:0!important;}
+.sidebar-widget-popular .sidebar-widget-item {border-bottom:none!important;}
+
+.user-avatar {border:2px solid #efefef!important;}
+
+.task-item-text {cursor:pointer!important;}
+.feed-user-avatar {border:1px solid #ececec!important;}
+.feed-add-post-destination-icon {margin-bottom:7px!important;}
+
+/* Interface CSS */
+.task-list-toolbar-search-input { padding-top: 4px !important; height: 21px !important;}

@@ -1,0 +1,33 @@
+<?
+$MESS["CRM_OPTIONS_PATH_TO_LEAD_EDIT"] = "Lead editor page:";
+$MESS["CRM_OPTIONS_PATH_TO_LEAD_SHOW"] = "Lead view page:";
+$MESS["CRM_OPTIONS_PATH_TO_LEAD_LIST"] = "Leads page:";
+$MESS["CRM_OPTIONS_PATH_TO_LEAD_CONVERT"] = "Lead conversion page:";
+$MESS["CRM_OPTIONS_PATH_TO_LEAD_IMPORT"] = "Lead import page:";
+$MESS["CRM_OPTIONS_PATH_TO_CONTACT_EDIT"] = "Contact editor page:";
+$MESS["CRM_OPTIONS_PATH_TO_CONTACT_SHOW"] = "Contact page:";
+$MESS["CRM_OPTIONS_PATH_TO_CONTACT_LIST"] = "Contacts page:";
+$MESS["CRM_OPTIONS_PATH_TO_CONTACT_IMPORT"] = "Contact import page:";
+$MESS["CRM_OPTIONS_PATH_TO_DEAL_EDIT"] = "Deal editor page:";
+$MESS["CRM_OPTIONS_PATH_TO_DEAL_SHOW"] = "Deal view page:";
+$MESS["CRM_OPTIONS_PATH_TO_DEAL_LIST"] = "Deals page:";
+$MESS["CRM_OPTIONS_PATH_TO_COMPANY_LIST"] = "Company view page:";
+$MESS["CRM_OPTIONS_PATH_TO_COMPANY_SHOW"] = "Contact view page:";
+$MESS["CRM_OPTIONS_PATH_TO_COMPANY_EDIT"] = "Company editor page:";
+$MESS["CRM_OPTIONS_PATH_TO_USER_PROFILE"] = "User profile page:";
+$MESS["CRM_TAB_PATH"] = "Path Tempates";
+$MESS["CRM_TAB_TITLE_PATH"] = "CRM Path Templates";
+$MESS["CRM_OPTIONS_PATH_TO_COMPANY_IMPORT"] = "Company import page:";
+$MESS["CRM_OPTIONS_PATH_TO_DEAL_IMPORT"] = "Deal import page:";
+$MESS["CRM_OPTIONS_PATH_TO_BP"] = "User business processes page:";
+$MESS["CRM_OPTIONS_EMAIL_FROM"] = "\"From\" e-mail address";
+$MESS["CRM_PROXY_SCHEME"] = "Connect via proxy using:";
+$MESS["CRM_PROXY_SERVER"] = "Proxy address:";
+$MESS["CRM_PROXY_PORT"] = "Proxy port:";
+$MESS["CRM_PROXY_USERNAME"] = "Username:";
+$MESS["CRM_PROXY_PASSWORD"] = "Password:";
+$MESS["CRM_SALE_DEAL_OPENED"] = "Deal is closed by default";
+$MESS["CRM_SALE_DEAL_PROBABILITY"] = "Default deal probability, %:";
+$MESS["CRM_SALE_DEAL_ASSIGNED_BY_ID"] = "Default deal responsible person:";
+$MESS["CRM_PROXY_TITLE"] = "Proxy Settings";
+?>

@@ -1,0 +1,6 @@
+<?
+$MESS["CRM_OWNER_TYPE_LEAD"] = "Lead";
+$MESS["CRM_OWNER_TYPE_DEAL"] = "Deal";
+$MESS["CRM_OWNER_TYPE_CONTACT"] = "Contact";
+$MESS["CRM_OWNER_TYPE_COMPANY"] = "Company";
+?>

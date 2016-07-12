@@ -1,0 +1,31 @@
+<?
+$MESS["SONET_UM_GENERAL"] = "General";
+$MESS["SONET_UM_MODS"] = "Moderators";
+$MESS["SONET_UM_USERS"] = "Members";
+$MESS["SONET_UM_PHOTO"] = "Photo";
+$MESS["SONET_UM_FORUM"] = "Forum";
+$MESS["SONET_UM_BLACKLIST"] = "Ban List";
+$MESS["SONET_UM_BLOG"] = "Conversations";
+$MESS["SONET_UM_CALENDAR"] = "Calendar";
+$MESS["SONET_UM_FILES"] = "Files";
+$MESS["SONET_UM_SEARCH"] = "Search";
+$MESS["SONET_UM_ARCHIVE_GROUP"] = "(archive group)";
+$MESS["SONET_UM_SEND_MESSAGE"] = "Send message to participants";
+$MESS["SONET_UM_EDIT"] = "Group Parameters";
+$MESS["SONET_UM_FEATURES"] = "Feature Settings";
+$MESS["SONET_UM_DELETE"] = "Delete Group";
+$MESS["SONET_UM_MOD"] = "Edit Moderators";
+$MESS["SONET_UM_MOD1"] = "Moderators";
+$MESS["SONET_UM_BAN"] = "Ban List";
+$MESS["SONET_UM_INVITE"] = "Invite to Group";
+$MESS["SONET_UM_REQUESTS_OUT"] = "Group Invitations";
+$MESS["SONET_UM_JOIN"] = "Join Group";
+$MESS["SONET_UM_LEAVE"] = "Leave Group";
+$MESS["SONET_UM_SUBSCRIBE"] = "Subscription";
+$MESS["SONET_UM_MEMBERS"] = "Edit Users";
+$MESS["SONET_UM_MEMBERS1"] = "Members";
+$MESS["SONET_UM_IS_EXTRANET"] = " (extranet)";
+$MESS["SONET_UM_ACTIONS_BUTTON"] = "Actions";
+$MESS["SONET_UM_SEARCH_BUTTON_TITLE"] = "Search Group";
+$MESS["SONET_UM_REQUESTS"] = "Invites and requests";
+?>

@@ -1,0 +1,7 @@
+<?
+$MESS["TASK_TOOLBAR_FILTER_TREE"] = "Mit Teilaufgaben";
+$MESS["TASK_TOOLBAR_FILTER_LIST"] = "Flache Ansicht";
+$MESS["TASK_TOOLBAR_FILTER_GANTT"] = "Gantt-Diagramm";
+$MESS["TASK_TOOLBAR_FILTER_BUTTON"] = "Filter";
+$MESS["TASK_TOOLBAR_FILTER_REPORTS"] = "Berichte";
+?>

@@ -1,0 +1,18 @@
+<?
+$MESS["REPORT_TASKS_COLUMN_TREE_STATUS_SUB"] = "In status";
+$MESS["REPORT_TASKS_DURATION_FOR_PERIOD"] = "Time spent (reporting period)";
+$MESS["REPORT_TASKS_Tag:TASK.NAME"] = "Tags";
+$MESS["TASKS_REPORT_DEFAULT_2"] = "Involvement in projects";
+$MESS["TASKS_REPORT_DEFAULT_3"] = "Tasks this month";
+$MESS["TASKS_REPORT_DEFAULT_4"] = "Efficiency Report";
+$MESS["TASKS_REPORT_EFF_EMPLOYEE"] = "Employee";
+$MESS["TASKS_REPORT_EFF_NEW"] = "New";
+$MESS["TASKS_REPORT_EFF_OPEN"] = "Open";
+$MESS["TASKS_REPORT_EFF_CLOSED"] = "Closed";
+$MESS["TASKS_REPORT_EFF_OVERDUE"] = "Overdue";
+$MESS["TASKS_REPORT_EFF_MARKED"] = "Evaluation";
+$MESS["TASKS_REPORT_EFF_EFFICIENCY"] = "Efficiency";
+$MESS["TASKS_REPORT_DEFAULT_5"] = "Tasks for last month";
+$MESS["TASKS_REPORT_DURATION_DAYS"] = "d.";
+$MESS["TASKS_REPORT_DURATION_HOURS"] = "hr.";
+?>

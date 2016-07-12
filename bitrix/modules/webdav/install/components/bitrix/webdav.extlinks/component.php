@@ -1,0 +1,113 @@
+<?if(!defined("B_PROLOG_INCLUDED")||B_PROLOG_INCLUDED!==true)die();
+
+function CheckUserPassword($arF)
+{
+	
+	if(!array_key_exists("PASSWORD", $arF) || strlen($arF["PASSWORD"]) <= 0)
+	{
+		return "NOT";
+	}
+	$res = "PASSWORD";
+	$pass = "";
+	if(array_key_exists("USER_PASSWORD", $_REQUEST) && strlen($_REQUEST["USER_PASSWORD"]) > 0)
+	{
+		$pass = $_REQUEST["USER_PASSWORD"];
+		$res = "PASSWORD_WRONG";
+	}
+	elseif(isset($_SESSION["WEBDAV_DATA"]["EXT_LINK_PASSWORD"]) && strlen($_SESSION["WEBDAV_DATA"]["EXT_LINK_PASSWORD"]) > 0)
+	{
+		$pass = $_SESSION["WEBDAV_DATA"]["EXT_LINK_PASSWORD"];
+	}
+	
+	if(CWebDavExtLinks::CheckPassword($arF, $pass))
+	{
+		if(!array_key_exists("WEBDAV_DATA",$_SESSION))
+		{
+			$_SESSION["WEBDAV_DATA"] = array();
+		}
+		$_SESSION["WEBDAV_DATA"]["EXT_LINK_PASSWORD"] = $pass;
+		return "NOT";
+	}
+	return $res;
+}
+
+if (!CModule::IncludeModule("webdav"))
+{
+	ShowError(GetMessage("WD_MODULE_IS_NOT_INSTALLED"));
+	return 0;
+}
+
+$sType = "cp";
+if(IsModuleInstalled("bitrix24"))
+{
+	$sType = "b24";
+}
+elseif(SITE_TEMPLATE_ID == "bitrix24")
+{
+	$sType = "b24_template";
+}
+
+$arResult = array( 
+	"SITE_TYPE" => $sType,
+	"ICON" => "empty.jpg",
+	"F_SIZE" => 0,
+	"DESCRIPTION" => "",
+	"FILE_NOT_FOUND" => false,
+	"PASSWORD" => "NOT", // "NOT", "PASSWORD", "PASSWORD_WRONG"
+);
+
+
+
+$hash = CWebDavExtLinks::GetHashFromURL();
+if($hash === false)
+{
+	ShowError(GetMessage('WD_MODULE_IS_FILE_NOT_FOUND'));
+	return 0;
+}
+//not set default value to in getList LINK_TYPE
+$resF = CWebDavExtLinks::GetList(array("HASH" => $hash, "ACTUAL" => true, 'LINK_TYPE' => null));
+$arGetListRes = null;
+if($arF = $resF->Fetch())
+{
+	$arGetListRes = $arF;
+	$arResult["HASH"] = $hash;
+	$arResult["NAME"] = GetFileName($arF["URL"]);		
+	$arResult["ICON"] = CWebDavExtLinks::GetExtensionIcon($arF["URL"]);
+	$arResult["F_SIZE"] = $arF["F_SIZE"];
+	$arResult["DESCRIPTION"] = $arF["DESCRIPTION"];
+	$arResult["PASSWORD"] = CheckUserPassword($arF);
+}
+else
+{
+	$arResult["NAME"] =  GetMessage("WD_MODULE_IS_FILE_NOT_FOUND");		
+	$arResult["ICON"] = "nf.png";
+	$arResult["F_SIZE"] = 0;
+	$arResult["DESCRIPTION"] = GetMessage("WD_MODULE_IS_FILE_NOT_FOUND_DESCRIPTION");
+	$arResult["FILE_NOT_FOUND"] = true;
+}
+
+if(!empty($arF) && !empty($arF['LINK_TYPE']) && $arF['LINK_TYPE'] == CWebDavExtLinks::LINK_TYPE_AUTO)
+{
+	CWebDavExtLinks::LoadFile($arGetListRes);
+}
+
+if(!empty($arF) && !empty($arF['SINGLE_SESSION']))
+{
+	CWebDavExtLinks::DeleteSingleSessionLink($hash);
+	CWebDavExtLinks::LoadFile($arGetListRes);
+}
+
+$arResult["COMPANY_NAME"] = COption::GetOptionString("main", "site_name", "");
+if(
+	array_key_exists("LoadFile", $_REQUEST)
+	&& intval($_REQUEST["LoadFile"]) > 0
+	&& $arResult["PASSWORD"] == "NOT"
+	&& $arGetListRes['LINK_TYPE'] != CWebDavExtLinks::LINK_TYPE_AUTO
+)
+{
+	CWebDavExtLinks::LoadFile($arGetListRes);
+}
+
+$APPLICATION->RestartBuffer();
+$this->IncludeComponentTemplate();
+

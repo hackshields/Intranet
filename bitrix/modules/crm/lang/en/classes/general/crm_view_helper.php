@@ -1,0 +1,18 @@
+<?
+$MESS["CRM_ENTITY_INFO_RESPONSIBLE"] = "Responsible person";
+$MESS["CRM_ENTITY_INFO_RESPONSIBLE_CHANGE"] = "change";
+$MESS["CRM_GET_USER_INFO_GENERAL_ERROR"] = "Cannot retrieve user information.";
+$MESS["CRM_ENTITY_INFO_DETAILS_BUTTON"] = "Details";
+$MESS["CRM_ENTITY_INFO_DETAILS_TITLE"] = "Details";
+$MESS["CRM_ENTITY_MULTI_FIELDS_MORE"] = "more";
+$MESS["CRM_ENTITY_ADD_ACTIVITY"] = "Add activity";
+$MESS["CRM_ENTITY_ADD_ACTIVITY_HINT"] = "No activities";
+$MESS["CRM_DEAL_STAGE_MANAGER_DLG_TTL"] = "Select the result for the deal closure.";
+$MESS["CRM_DEAL_STAGE_MANAGER_APOLOGY_TTL"] = "Deal closure options";
+$MESS["CRM_LEAD_STATUS_MANAGER_DLG_TTL"] = "Select the result for the lead handling.";
+$MESS["CRM_LEAD_STATUS_MANAGER_APOLOGY_TTL"] = "Lead handling options";
+$MESS["CRM_DEAL_STAGE_MANAGER_WON_STEP_HINT"] = "Close deal";
+$MESS["CRM_LEAD_STATUS_MANAGER_CONVERTED_STEP_HINT"] = "Complete lead";
+$MESS["CRM_LEAD_STATUS_MANAGER_CONVERTED_STEP_NAME"] = "Convert";
+$MESS["CRM_ENTITY_ACTIVITY_FOR_RESPONSIBLE"] = "for";
+?>

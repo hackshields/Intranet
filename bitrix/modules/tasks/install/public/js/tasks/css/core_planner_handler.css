@@ -1,0 +1,49 @@
+
+.tm-popup-tasks { margin: 0 0 15px 0; }
+.tm-popup-task-list { margin: 9px 0 4px 0; padding: 0 0 0 28px; overflow-y: auto; max-height: 108px; position:relative; }
+.tm-popup-task {  margin: 0 0 7px 0; padding:0 15px 0 0; color: #696969; font: normal 12px/17px Arial, Helvetica, sans-serif; }
+.tm-popup-task-name { color: #000; /*border-bottom:1px dashed #156cb6;*/ text-decoration: none; cursor: pointer;  }
+
+.tm-popup-task-time, .tm-popup-task-time-admin {margin-left: 5px; font-size: 11px; color: #696969; text-decoration: none; }
+.tm-popup-task-time {cursor: pointer;}
+
+.tm-popup-task-icon { display: none; vertical-align: baseline;}
+
+.tm-popup-task-status-in-progress .tm-popup-task-name { color: #000;  }
+.tm-popup-task-status-in-progress .tm-popup-task-icon { display:inline-block; width:10px; height:8px; font-size:1px; background: url(../images/play-flash.gif) no-repeat 0 0; }
+.tm-popup-task-status-accepted .tm-popup-task-name { color: #000; }
+.tm-popup-task-status-completed .tm-popup-task-name { color: #969696;  text-decoration: line-through;}
+.tm-popup-task-status-delayed .tm-popup-task-name { color: #969696; }
+.tm-popup-task-status-new .tm-popup-task-name { color: #398c1b; }
+.tm-popup-task-status-overdue .tm-popup-task-name { color: #cc2020; }
+.tm-popup-task-status-waiting .tm-popup-task-name { color: #dd7d00; }
+.tm-popup-task-status-declined .tm-popup-task-name { color: #dd7d00; text-decoration: line-through;}
+
+.tm-popup-task-delete { position:absolute; width: 13px; height: 13px; margin:3px 0 0 4px; cursor:pointer; vertical-align:middle;  background:none;}
+.tm-popup-task:hover .tm-popup-task-delete { background: url(/bitrix/js/main/core/images/controls-sprite.png) no-repeat 0 -283px;  }
+.tm-popup-task:hover .tm-popup-task-delete:hover { background: url(/bitrix/js/main/core/images/controls-sprite.png) no-repeat -17px -283px; }
+.tm-popup-task-name:hover { border-bottom:1px dashed #156cb6; color: #156cb6;}
+.tm-popup-task-time:hover { border-bottom:1px dashed #696969;}
+
+.tm-popup-task-form { margin: 4px 0 0 28px; }
+.tm-popup-task-form-textbox { width:270px; color: #000; border: 1px solid #adadad; vertical-align: middle; font: normal normal normal 12px/normal Arial, Helvetica, sans-serif; }
+
+.tm-popup-tasks-empty .tm-popup-task-form { margin-left: 6px; }
+.tm-popup-tasks-empty .tm-popup-task-form-textbox { width: 292px; }
+
+.tm-popup-tasks-empty .tm-popup-task-list {display: none;}
+.tm-popup-events-empty .tm-popup-event-list {display: none;}
+
+
+.tm-popup-task-form-submit, .tm-popup-event-form-submit {
+	display:inline-block;
+	width:17px;
+	height: 17px;
+	background: url(/bitrix/js/main/core/images/controls-sprite.png) -13px -304px;
+	vertical-align: middle;
+	margin: 0 0 0 6px;
+	cursor: pointer;
+}
+
+.tm-popup-task-form-disabled .tm-popup-task-form-textbox { color: #adadad; }
+.tm-popup-task-form-disabled .tm-popup-task-form-submit { cursor: default;  background: url(/bitrix/js/main/core/images/controls-sprite.png) -11px -68px; }

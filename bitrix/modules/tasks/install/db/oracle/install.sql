@@ -1,0 +1,256 @@
+CREATE TABLE b_tasks (
+	ID number(11) NOT NULL,
+	TITLE varchar(255 char),
+	DESCRIPTION clob,
+	DESCRIPTION_IN_BBCODE char(1 char) DEFAULT 'N' NOT NULL,
+	PRIORITY char(1 char) DEFAULT '1' NOT NULL,
+	STATUS char(1 char),
+	RESPONSIBLE_ID number(11),
+	DATE_START date,
+	DURATION_PLAN number(11),
+	DURATION_FACT number(11),
+	DURATION_TYPE varchar(5 char) DEFAULT 'days' NOT NULL,
+	REPLICATE char(1 char) DEFAULT 'N' NOT NULL,
+	DEADLINE date,
+	START_DATE_PLAN date,
+	END_DATE_PLAN date,
+	CREATED_BY number(11),
+	CREATED_DATE date,
+	CHANGED_BY number(11),
+	CHANGED_DATE date,
+	STATUS_CHANGED_BY number(11),
+	STATUS_CHANGED_DATE date,
+	CLOSED_BY number(11),
+	CLOSED_DATE date,
+	GUID varchar(50 char),
+	XML_ID varchar(50 char),
+	EXCHANGE_ID varchar(196 char),
+	EXCHANGE_MODIFIED varchar(196 char),
+	OUTLOOK_VERSION number(11),
+	MARK char(1 char),
+	ALLOW_CHANGE_DEADLINE char(1 char) DEFAULT 'N' NOT NULL,
+	TASK_CONTROL char(1 char) DEFAULT 'N' NOT NULL,
+	ADD_IN_REPORT char(1 char) DEFAULT 'N' NOT NULL,
+	GROUP_ID number(11),
+	PARENT_ID number(11),
+	FORUM_TOPIC_ID number(20),
+	MULTITASK char(1 char) DEFAULT 'N' NOT NULL,
+	SITE_ID char(2 char) NOT NULL,
+	DECLINE_REASON clob,
+	FORKED_BY_TEMPLATE_ID number(11),
+	PRIMARY KEY (ID),
+	CONSTRAINT b_tasks_ibfk_2 FOREIGN KEY (PARENT_ID) REFERENCES b_tasks (ID),
+	CONSTRAINT b_tasks_ibfk_3 FOREIGN KEY (CREATED_BY) REFERENCES b_user (ID),
+	CONSTRAINT b_tasks_ibfk_4 FOREIGN KEY (RESPONSIBLE_ID) REFERENCES b_user (ID),
+	CONSTRAINT b_tasks_ibfk_5 FOREIGN KEY (CHANGED_BY) REFERENCES b_user (ID),
+	CONSTRAINT b_tasks_ibfk_6 FOREIGN KEY (STATUS_CHANGED_BY) REFERENCES b_user (ID)
+)
+/
+CREATE INDEX b_tasks_forum_topic_id_ibpk ON b_tasks(FORUM_TOPIC_ID)
+/
+CREATE UNIQUE INDEX b_tasks_guid_ibuk ON b_tasks(GUID)
+/
+CREATE SEQUENCE sq_b_tasks INCREMENT BY 1 NOMAXVALUE NOCYCLE NOCACHE NOORDER
+/
+CREATE OR REPLACE TRIGGER b_tasks_insert
+BEFORE INSERT
+ON b_tasks
+FOR EACH ROW 
+BEGIN
+	IF :NEW.ID IS NULL THEN
+		SELECT sq_b_tasks.NEXTVAL INTO :NEW.ID FROM dual;
+	END IF;
+END;
+/
+CREATE TABLE b_tasks_files_temporary (
+	USER_ID number(11) NOT NULL,
+	FILE_ID number(11) NOT NULL,
+	UNIX_TS number(11) NOT NULL,
+	PRIMARY KEY (FILE_ID)
+)
+/
+CREATE INDEX b_tasks_files_temp_uid_ibk ON b_tasks_files_temporary(USER_ID)
+/
+CREATE INDEX b_tasks_files_temp_uts_ibk ON b_tasks_files_temporary(UNIX_TS)
+/
+CREATE TABLE b_tasks_dependence (
+	TASK_ID number(11) DEFAULT '0' NOT NULL,
+	DEPENDS_ON_ID number(11) DEFAULT '0' NOT NULL,
+	PRIMARY KEY (TASK_ID,DEPENDS_ON_ID),
+	CONSTRAINT b_tasks_dependence_ibfk_1 FOREIGN KEY (TASK_ID) REFERENCES b_tasks (ID),
+	CONSTRAINT b_tasks_dependence_ibfk_2 FOREIGN KEY (DEPENDS_ON_ID) REFERENCES b_tasks (ID)
+)
+/
+CREATE TABLE b_tasks_file (
+	TASK_ID number(11) DEFAULT '0' NOT NULL,
+	FILE_ID number(11) DEFAULT '0' NOT NULL,
+	PRIMARY KEY (TASK_ID,FILE_ID),
+	CONSTRAINT b_tasks_file_ibfk_1 FOREIGN KEY (FILE_ID) REFERENCES b_file (ID),
+	CONSTRAINT b_tasks_file_ibfk_2 FOREIGN KEY (TASK_ID) REFERENCES b_tasks (ID)
+)
+/
+CREATE TABLE b_tasks_member (
+	TASK_ID number(11) DEFAULT '0' NOT NULL,
+	USER_ID number(11) DEFAULT '0' NOT NULL,
+	TYPE char(1 char) DEFAULT '' NOT NULL,
+	PRIMARY KEY (TASK_ID,USER_ID,TYPE),
+	CONSTRAINT b_tasks_member_ibfk_1 FOREIGN KEY (TASK_ID) REFERENCES b_tasks (ID),
+	CONSTRAINT b_tasks_member_ibfk_2 FOREIGN KEY (USER_ID) REFERENCES b_user (ID)
+)
+/
+CREATE TABLE b_tasks_tag (
+	TASK_ID number(11) NOT NULL,
+	USER_ID number(11) NOT NULL,
+	NAME varchar(255 char) NOT NULL,
+	PRIMARY KEY (TASK_ID,USER_ID,NAME),
+	CONSTRAINT b_tasks_tag_ibfk_1 FOREIGN KEY (TASK_ID) REFERENCES b_tasks (ID),
+	CONSTRAINT b_tasks_tag_ibfk_2 FOREIGN KEY (USER_ID) REFERENCES b_user (ID)
+)
+/
+CREATE TABLE b_tasks_template (
+	ID number(11) NOT NULL,
+	TASK_ID number(11),
+	TITLE varchar(255 char),
+	DESCRIPTION clob,
+	DESCRIPTION_IN_BBCODE char(1 char) DEFAULT 'N' NOT NULL,
+	PRIORITY char(1 char) DEFAULT '1' NOT NULL,
+	STATUS char(1 char) DEFAULT '1' NOT NULL,
+	RESPONSIBLE_ID number(11),
+	DEADLINE_AFTER number(11),
+	REPLICATE char(1 char) DEFAULT 'N' NOT NULL,
+	REPLICATE_PARAMS clob,
+	CREATED_BY number(11),
+	XML_ID varchar(50 char),
+	ALLOW_CHANGE_DEADLINE char(1 char) DEFAULT 'N' NOT NULL,
+	TASK_CONTROL char(1 char) DEFAULT 'N' NOT NULL,
+	ADD_IN_REPORT char(1 char) DEFAULT 'N' NOT NULL,
+	GROUP_ID number(11),
+	PARENT_ID number(11),
+	MULTITASK char(1 char) DEFAULT 'N' NOT NULL,
+	SITE_ID char(2 char) NOT NULL,
+	ACCOMPLICES clob,
+	AUDITORS clob,
+	RESPONSIBLES clob,
+	FILES clob,
+	TAGS clob,
+	DEPENDS_ON clob,
+	PRIMARY KEY (ID),
+	CONSTRAINT b_tasks_template_ibfk_1 FOREIGN KEY (PARENT_ID) REFERENCES b_tasks (ID),
+	CONSTRAINT b_tasks_template_ibfk_2 FOREIGN KEY (CREATED_BY) REFERENCES b_user (ID),
+	CONSTRAINT b_tasks_template_ibfk_3 FOREIGN KEY (RESPONSIBLE_ID) REFERENCES b_user (ID),
+	CONSTRAINT b_tasks_template_ibfk_4 FOREIGN KEY (TASK_ID) REFERENCES b_tasks (ID)
+)
+/
+CREATE SEQUENCE sq_b_tasks_template INCREMENT BY 1 NOMAXVALUE NOCYCLE NOCACHE NOORDER
+/
+CREATE OR REPLACE TRIGGER b_tasks_template_insert
+BEFORE INSERT
+ON b_tasks_template
+FOR EACH ROW 
+BEGIN
+	IF :NEW.ID IS NULL THEN
+		SELECT sq_b_tasks_template.NEXTVAL INTO :NEW.ID FROM dual;
+	END IF;
+END;
+/
+CREATE TABLE b_tasks_viewed (
+	TASK_ID number(11) NOT NULL,
+	USER_ID number(11) NOT NULL,
+	VIEWED_DATE date DEFAULT SYSDATE NOT NULL,
+	PRIMARY KEY (TASK_ID,USER_ID),
+	CONSTRAINT b_tasks_viewed_ibfk_1 FOREIGN KEY (USER_ID) REFERENCES b_user (ID),
+	CONSTRAINT b_tasks_viewed_ibfk_2 FOREIGN KEY (TASK_ID) REFERENCES b_tasks (ID)
+)
+/
+CREATE OR REPLACE TRIGGER b_tasks_viewed_update
+BEFORE UPDATE
+ON b_tasks_viewed
+REFERENCING OLD AS OLD NEW AS NEW
+FOR EACH ROW
+BEGIN
+	IF :NEW.VIEWED_DATE IS NOT NULL THEN
+		:NEW.VIEWED_DATE := SYSDATE;
+	ELSE
+		:NEW.VIEWED_DATE := :OLD.VIEWED_DATE;
+	END IF;
+END;
+/
+CREATE TABLE b_tasks_log (
+  CREATED_DATE date NOT NULL,
+  USER_ID number(11) NOT NULL,
+  TASK_ID number(11) NOT NULL,
+  FIELD varchar(50 char) NOT NULL,
+  FROM_VALUE clob,
+  TO_VALUE clob
+)
+/
+CREATE TABLE b_tasks_elapsed_time (
+  ID number(11) NOT NULL,
+  CREATED_DATE date DEFAULT SYSDATE NOT NULL,
+  USER_ID number(11) NOT NULL,
+  TASK_ID number(11) NOT NULL,
+  MINUTES number(11) NOT NULL,
+  COMMENT_TEXT clob,
+  PRIMARY KEY (ID)
+)
+/
+CREATE INDEX b_tasks_elapsed_time_ibpk_2 ON b_tasks_elapsed_time(TASK_ID)
+/
+CREATE SEQUENCE sq_b_tasks_elapsed_time
+/
+CREATE OR REPLACE TRIGGER b_tasks_elapsed_time_insert
+BEFORE INSERT
+ON b_tasks_elapsed_time
+FOR EACH ROW
+BEGIN
+	IF :NEW.ID IS NULL THEN
+ 		SELECT sq_b_tasks_elapsed_time.NEXTVAL INTO :NEW.ID FROM dual;
+	END IF;
+END;
+/
+CREATE OR REPLACE TRIGGER b_tasks_elapsed_time_update
+BEFORE UPDATE
+ON b_tasks_elapsed_time
+REFERENCING OLD AS OLD NEW AS NEW
+FOR EACH ROW
+BEGIN
+	IF :NEW.CREATED_DATE IS NOT NULL THEN
+		:NEW.CREATED_DATE := SYSDATE;
+	ELSE
+		:NEW.CREATED_DATE := :OLD.CREATED_DATE;
+	END IF;
+END;
+/
+CREATE TABLE b_tasks_reminder (
+  USER_ID number(11) NOT NULL,
+  TASK_ID number(11) NOT NULL,
+  REMIND_DATE date NOT NULL,
+  TYPE char(1 char) NOT NULL,
+  TRANSPORT char(1 char) NOT NULL,
+  CONSTRAINT b_tasks_reminder_ibfk_1 FOREIGN KEY (USER_ID) REFERENCES b_user (ID),
+  CONSTRAINT b_tasks_reminder_ibfk_2 FOREIGN KEY (TASK_ID) REFERENCES b_tasks (ID)
+)
+/
+CREATE TABLE b_tasks_filters (
+	ID number(11) NOT NULL,
+	USER_ID number(11) NOT NULL,
+	PARENT number(11) NOT NULL,
+	NAME varchar(255 char),
+	SERIALIZED_FILTER clob,
+	PRIMARY KEY (ID)
+)
+/
+CREATE INDEX b_tasks_filters_user_id_ibpk ON b_tasks_filters(USER_ID)
+/
+CREATE SEQUENCE sq_b_tasks_filters INCREMENT BY 1 NOMAXVALUE NOCYCLE NOCACHE NOORDER
+/
+CREATE OR REPLACE TRIGGER b_tasks_filters_insert
+BEFORE INSERT
+ON b_tasks_filters
+FOR EACH ROW 
+BEGIN
+	IF :NEW.ID IS NULL THEN
+		SELECT sq_b_tasks_filters.NEXTVAL INTO :NEW.ID FROM dual;
+	END IF;
+END;
+/

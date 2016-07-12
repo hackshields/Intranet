@@ -1,0 +1,39 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Company",
+		"#SITE_DIR#about/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Employees",
+		"#SITE_DIR#company/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Documents", 
+		"#SITE_DIR#docs/", 
+		Array(), 
+		Array(), 
+		"CBXFeatures::IsFeatureEnabled('CommonDocuments')" 
+	),
+	Array(
+		"Services", 
+		"#SITE_DIR#services/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Workgroups", 
+		"#SITE_DIR#workgroups/", 
+		Array(), 
+		Array(), 
+		"CBXFeatures::IsFeatureEnabled('Workgroups')" 
+	),
+);
+?>

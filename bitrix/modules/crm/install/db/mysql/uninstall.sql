@@ -1,0 +1,24 @@
+DROP TABLE IF EXISTS b_crm_lead;
+DROP TABLE IF EXISTS b_crm_deal;
+DROP TABLE IF EXISTS b_crm_company;
+DROP TABLE IF EXISTS b_crm_contact;
+DROP TABLE IF EXISTS b_crm_status;
+DROP TABLE IF EXISTS b_crm_field_multi;
+DROP TABLE IF EXISTS b_crm_event;
+DROP TABLE IF EXISTS b_crm_event_relations;
+DROP TABLE IF EXISTS b_crm_entity_lock;
+DROP TABLE IF EXISTS b_crm_entity_perms;
+DROP TABLE IF EXISTS b_crm_role;
+DROP TABLE IF EXISTS b_crm_role_perms;
+DROP TABLE IF EXISTS b_crm_role_relation;
+DROP TABLE if exists b_crm_external_sale;
+DROP TABLE IF EXISTS b_crm_product_row;
+DROP TABLE IF EXISTS b_crm_product;
+DROP TABLE IF EXISTS b_crm_catalog;
+DROP TABLE IF EXISTS b_crm_usr_act;
+DROP TABLE IF EXISTS b_crm_act_elem;
+DROP TABLE IF EXISTS b_crm_act_comm;
+DROP TABLE IF EXISTS b_crm_act_bind;
+DROP TABLE IF EXISTS b_crm_act;
+DROP TABLE IF EXISTS b_crm_usr_mt;
+
